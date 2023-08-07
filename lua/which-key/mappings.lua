@@ -126,6 +126,9 @@ function M._parse(value, mappings, opts)
     if type(k) == "string" then
       o.prefix = (o.prefix or "") .. k
     end
+    if not o.group_name then
+      o.group_name = v.name or value.name
+    end
     M._try_parse(v, mappings, o)
   end
 
